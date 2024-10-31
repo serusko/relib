@@ -3,6 +3,8 @@
 
   background-color: var(--bg-color);
   border-radius: 6px;
+
+  @apply flex items-center;
 }
 
 .button--primary {
