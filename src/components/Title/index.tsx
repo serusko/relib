@@ -1,5 +1,6 @@
-import styles from "./styles.module.css";
 import clsx from "clsx";
+
+import styles from "./Title.module.css";
 
 export interface Props extends React.ComponentProps<"h1"> {
   primary?: boolean;

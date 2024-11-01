@@ -8,7 +8,7 @@
 }
 
 .button--primary {
-  --bg-color: crimson;
+  @apply bg-slate-700 hover:bg-slate-900 text-white outline-none border-none;
 }
 
 .button--small {
