@@ -15,6 +15,7 @@ export default defineConfig({
     dts({ tsconfigPath: "./tsconfig.app.json" }),
   ],
   build: {
+    sourcemap: true,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
@@ -45,6 +46,11 @@ export default defineConfig({
           "react-dom": "React-dom",
           "react/jsx-runtime": "react/jsx-runtime",
         },
+        format: "cjs",
+        dir: "dist",
+        exports: "auto",
+        // preserveModules: true,
+        preserveModulesRoot: "src",
       },
     },
   },
