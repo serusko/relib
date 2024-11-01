@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "license": "MIT",
   "files": [
     "dist",
     "src"
@@ -23,8 +24,7 @@
     "clsx": "^2.1.1",
     "dlx": "^0.2.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "storybook": "^8.4.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
@@ -49,6 +49,7 @@
     "globals": "^15.11.0",
     "husky": "^8.0.0",
     "postcss": "^8.4.47",
+    "storybook": "^8.4.1",
     "tailwindcss": "^3.4.14",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",
