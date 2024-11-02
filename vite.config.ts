@@ -12,22 +12,29 @@ export default defineConfig({
   plugins: [
     react(),
     libInjectCss(),
-    dts({ tsconfigPath: "./tsconfig.app.json", exclude: ["**/*.stories.tsx"] }),
+    dts({
+      tsconfigPath: "./tsconfig.build.json",
+      exclude: ["**/*.stories.tsx", "**/*.stories.ts"],
+    }),
   ],
   build: {
     lib: {
       entry: [
-        resolve(__dirname, "src/index.ts"),
-        resolve(__dirname, "src/Button/index.ts"),
-        resolve(__dirname, "src/Title/index.ts"),
+        resolve(__dirname, "lib/index.ts"),
+        resolve(__dirname, "lib/Button/index.ts"),
+        resolve(__dirname, "lib/Title/index.ts"),
       ],
       formats: ["es"],
     },
     rollupOptions: {
       input: Object.fromEntries(
-        globSync(["src/**/index.tsx", "src/index.ts"]).map((file) => {
+        globSync([
+          "./lib/**/index.tsx",
+          "./lib/**/index.tsx",
+          "./lib/index.ts",
+        ]).map((file) => {
           const entryName = relative(
-            "src",
+            "lib",
             file.slice(0, file.length - extname(file).length)
           );
           const entryUrl = fileURLToPath(new URL(file, import.meta.url));
@@ -38,14 +45,14 @@ export default defineConfig({
       output: {
         dir: "dist", // Output directory
         entryFileNames: (chunk) => `${chunk.name}.js`,
-        assetFileNames: "assets/[name][extname]",
+        //  assetFileNames: "assets/[name][extname]",
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           "react/jsx-runtime": "react/jsx-runtime",
         },
         preserveModules: true, // This option keeps the module structure intact
-        preserveModulesRoot: "src", // Ensures the src/ directory is removed from the output path
+        preserveModulesRoot: "lib", // Ensures the src/ directory is removed from the output path
       },
     },
   },
