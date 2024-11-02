@@ -4,7 +4,7 @@ export default function App() {
   return (
     <div>
       <h1>pipiki</h1>
-      <Button label="pepe" />
+      <Button primary label="pepe" />
     </div>
   );
 }

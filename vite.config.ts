@@ -21,8 +21,7 @@ export default defineConfig({
     lib: {
       entry: [
         resolve(__dirname, "lib/index.ts"),
-        resolve(__dirname, "lib/Button/index.ts"),
-        resolve(__dirname, "lib/Title/index.ts"),
+        resolve(__dirname, "lib/*/index.ts"),
       ],
       formats: ["es"],
     },
@@ -44,15 +43,20 @@ export default defineConfig({
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         dir: "dist", // Output directory
-        entryFileNames: (chunk) => `${chunk.name}.js`,
-        //  assetFileNames: "assets/[name][extname]",
+        // entryFileNames: (chunk) => `${chunk.name}.js`,
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           "react/jsx-runtime": "react/jsx-runtime",
         },
-        preserveModules: true, // This option keeps the module structure intact
-        preserveModulesRoot: "lib", // Ensures the src/ directory is removed from the output path
+        // TODO: fix this
+        // preserveModules: true, // This option keeps the module structure intact
+        // preserveModulesRoot: "lib", // Ensures the src/ directory is removed from the output path
+        // manualChunks: (id) => {
+        //   const p = parse(id);
+        //   console.log(p);
+        //   return `${p.base}`;
+        // },
       },
     },
   },
