@@ -24,7 +24,7 @@
 }
 
 .button--primary {
-  @apply bg-primary-500 hover:bg-primary-700 text-white;
+  @apply bg-primary-500 hover:bg-primary-700 text-inverse;
 }
 
 .button--text {
@@ -36,7 +36,7 @@
 }
 
 .button--default {
-  @apply bg-neutral-100 hover:bg-neutral-300 text-dark;
+  @apply bg-neutral-100 hover:bg-neutral-300 text-text;
 }
 
 .button--small {

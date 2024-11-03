@@ -8,8 +8,8 @@ export default {
       colors: {
         primary: violet,
         neutral,
-        white: "#fff",
-        dark: "#222",
+        inverse: "#fff",
+        text: "#222",
       },
     },
   },
