@@ -1,4 +1,4 @@
 import Button from "./Button";
-import Title from "./Title";
+import InputField from "./FieldWrapper";
 
-export { Title, Button };
+export { InputField, Button };

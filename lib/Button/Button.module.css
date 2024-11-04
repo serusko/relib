@@ -1,10 +1,9 @@
 .button {
   --color: none;
   background-color: var(--bg-color);
-  border-radius: 0.25rem;
   line-height: 1;
   padding: 0 0.25rem;
-  @apply flex grow-0 items-center justify-center cursor-pointer relative outline-none border-none;
+  @apply outline outline-2 outline-offset-2 rounded flex grow-0 items-center justify-center cursor-pointer relative outline-none border-none;
 
   &:disabled {
     @apply pointer-events-none opacity-75;
@@ -48,11 +47,11 @@
 .button--medium {
   font-size: 0.875rem;
   padding: 0 1.3125rem;
-  height: 2.25rem;
+  @apply h-9;
 }
 
 .button--large {
   font-size: 1.4rem;
   padding: 0 1.5rem;
-  height: 2.625rem;
+  @apply h-10;
 }

@@ -1,0 +1,3 @@
+.input {
+  @apply outline-none text-base leading-none flex-1;
+}

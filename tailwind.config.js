@@ -1,4 +1,4 @@
-import { violet, neutral } from "tailwindcss/colors";
+import { violet, orange, rose, neutral } from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,6 +7,8 @@ export default {
     extend: {
       colors: {
         primary: violet,
+        danger: rose,
+        warning: orange,
         neutral,
         inverse: "#fff",
         text: "#222",

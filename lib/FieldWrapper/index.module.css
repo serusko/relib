@@ -1,0 +1,29 @@
+.container {
+  @apply flex flex-col flex-1 gap-1;
+}
+
+.horizontal {
+}
+
+.vertical {
+}
+
+.label {
+  @apply text-sm cursor-pointer;
+}
+
+.more {
+  @apply flex flex-row items-center flex-1 justify-between text-neutral-500 text-xs;
+}
+
+.warningText {
+  @apply text-warning-500;
+}
+
+.errorText {
+  @apply text-danger-500;
+}
+
+.asterisk {
+  @apply text-danger-500 ml-1;
+}

@@ -1,0 +1,41 @@
+.animator {
+  display: inline-block;
+  position: relative;
+  overflow-y: hidden;
+
+  & > div {
+    align-items: center;
+    position: absolute;
+    height: 100%;
+  }
+}
+
+.animator > div:nth-last-child(n + 2) {
+  animation: fadeOut 0.6s forwards; /* Adjust duration as needed */
+}
+
+.animator > div:nth-child(n + 2):last-child {
+  animation: fadeIn 0.6s forwards; /* Adjust duration as needed */
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(0, -100%); /* Adjust distance if needed */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(0, 100%); /* Adjust distance if needed */
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
+}

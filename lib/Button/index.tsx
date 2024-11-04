@@ -1,28 +1,8 @@
 import clsx from "clsx";
 
 import styles from "./Button.module.css";
-import IconName from "../Icon/IconName";
 import Icon from "../Icon";
-
-export interface Props extends React.ComponentProps<"button"> {
-  /**
-   * @default "button"
-   */
-  type?: "button" | "submit" | "reset";
-  size?: "small" | "medium" | "large";
-  leadingIcon?: IconName;
-  trailingICon?: IconName;
-  /**
-   * Indicate Loading status
-   */
-  isLoading?: boolean;
-  /**
-   * @default "default"
-   */
-  variant?: "primary" | "outline" | "default" | "text";
-  fullWidth?: boolean;
-  label: string;
-}
+import Props from "./props";
 
 export default function Button({
   variant = "default",

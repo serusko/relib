@@ -40,7 +40,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepublishOnly": "npm run build",
-    "chromatic": "npx chromatic --project-token=chpt_7d48c3cf4126a56"
+    "chromatic": "npx chromatic --project-token=chpt_7d48c3cf4126a56",
+    "sb": "yarn storybook"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -1,0 +1,7 @@
+.inputContainer {
+  @apply flex px-2 flex-row border border-solid border-neutral-300 rounded h-9 gap-2 bg-inverse items-center focus-within:border-primary-500;
+}
+
+.disabled {
+  @apply bg-neutral-100;
+}
