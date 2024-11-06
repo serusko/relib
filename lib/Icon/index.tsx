@@ -1,9 +1,13 @@
 import clsx from "clsx";
 import Props from "./props";
+import { forwardRef } from "react";
 
-export default function Icon({ size = 20, name }: Props) {
+function Icon(
+  { size = 20, name }: Props,
+  ref: React.RefAttributes<HTMLSpanElement>["ref"]
+) {
   return (
-    <span className={clsx(`icon-${name}`)}>
+    <span className={clsx(`icon-${name}`)} ref={ref}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height={`${size}px`}
@@ -16,3 +20,5 @@ export default function Icon({ size = 20, name }: Props) {
     </span>
   );
 }
+
+export default forwardRef(Icon);

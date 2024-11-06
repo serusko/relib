@@ -1,0 +1,7 @@
+.content {
+  @apply rounded-md bg-neutral-800 py-2 px-2.5 text-xs text-white;
+}
+
+.arrow {
+  @apply fill-neutral-800 drop-shadow-lg;
+}

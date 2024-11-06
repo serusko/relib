@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "../lib";
 import Icon from "../lib/Icon";
 import TextField from "../lib/TextField/index.tsx";
+import Tooltip from "../lib/Tooltip/index.tsx";
 
 export default function App() {
   const [value, setValue] = useState<null | string>(null);
@@ -15,7 +16,18 @@ export default function App() {
       <Button label="Large" isLoading />
       <Button label="Text" variant="text" />
       <Button label="Primary" variant="primary" />
-      <Button label="Outline" variant="outline" />
+      <Tooltip
+        content={
+          <>
+            Lest take a look on{" "}
+            <a href="#2" className="text-primary-500">
+              More
+            </a>
+          </>
+        }
+      >
+        <Button label="Outline" variant="outline" />
+      </Tooltip>
 
       <TextField
         name="text"

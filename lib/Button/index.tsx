@@ -1,20 +1,24 @@
 import clsx from "clsx";
 
-import styles from "./Button.module.css";
+import styles from "./index.module.css";
 import Icon from "../Icon";
 import Props from "./props";
+import { forwardRef } from "react";
 
-export default function Button({
-  variant = "default",
-  size = "medium",
-  type = "button",
-  trailingICon,
-  leadingIcon,
-  isLoading,
-  fullWidth,
-  label,
-  ...props
-}: Props) {
+function Button(
+  {
+    variant = "default",
+    size = "medium",
+    type = "button",
+    trailingICon,
+    leadingIcon,
+    isLoading,
+    fullWidth,
+    label,
+    ...props
+  }: Props,
+  ref: React.RefAttributes<HTMLButtonElement>["ref"]
+) {
   const style = clsx(styles.button, {
     [styles[`button--${variant}`]]: variant,
     [styles[`button--${size}`]]: variant !== "text" && size,
@@ -22,7 +26,7 @@ export default function Button({
   });
 
   return (
-    <button type={type} className={style} {...props}>
+    <button ref={ref} type={type} className={style} {...props}>
       {leadingIcon && <Icon name={leadingIcon} />}
       <span>{label}</span>
       {trailingICon && <Icon name={trailingICon} />}
@@ -30,3 +34,5 @@ export default function Button({
     </button>
   );
 }
+
+export default forwardRef(Button);
