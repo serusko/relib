@@ -4,18 +4,26 @@ import TextInput from "../TextInput";
 import Props from "./props";
 
 import styles from "./index.module.css";
+import { useMemo } from "react";
+import TextAreaInput from "../TextAreaInput";
 
 export default function TextField({
   helperText,
+  multiline,
   required,
   warning,
   error,
   label,
-  name,
   value,
+  name,
   max,
   ...rest
 }: Props) {
+  const Input = useMemo(
+    () => (multiline ? TextAreaInput : TextInput),
+    [multiline]
+  );
+
   return (
     <FieldWrapper
       helperText={helperText}
@@ -33,7 +41,7 @@ export default function TextField({
         ) : undefined
       }
     >
-      <TextInput
+      <Input
         required={required}
         value={value}
         name={name}

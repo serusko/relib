@@ -9,6 +9,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col gap-4 p-4 items-start">
+      <a href="#1">Pipik</a>
       <Button label="Small" size="small" />
       <Button label="Medium" size="medium" />
       <Button label="Disabled" disabled />
@@ -28,7 +29,6 @@ export default function App() {
       >
         <Button label="Outline" variant="outline" />
       </Tooltip>
-
       <TextField
         name="text"
         label="Text Field"
@@ -43,6 +43,28 @@ export default function App() {
         }
         leftIcon={<Icon name="a" size={18} />}
         max={10}
+      />
+      <TextField
+        name="text"
+        label="Text Field"
+        required
+        value={value}
+        setValue={setValue}
+      />
+      <TextField
+        name="text"
+        label="Text Field"
+        required
+        multiline
+        value={value}
+        setValue={setValue}
+        helperText="Helper ... text"
+        error={
+          (value || "").length > 10
+            ? "Cannot be longer than 10 characters"
+            : undefined
+        }
+        leftIcon={<Icon name="a" size={18} />}
       />
     </div>
   );

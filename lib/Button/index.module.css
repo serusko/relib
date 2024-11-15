@@ -47,11 +47,11 @@
 .button--medium {
   font-size: 0.875rem;
   padding: 0 1.3125rem;
-  @apply h-9;
+  @apply h-10;
 }
 
 .button--large {
   font-size: 1.4rem;
   padding: 0 1.5rem;
-  @apply h-10;
+  @apply h-11;
 }
