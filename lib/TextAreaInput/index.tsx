@@ -6,14 +6,13 @@ import { useEffect, useRef } from "react";
 
 export default function TextAreaInput({
   autoComplete,
-  rightIcon,
-  leftIcon,
   required,
   setValue,
   disabled,
   value,
   name,
   max,
+  rows = 2,
 }: Props) {
   const ref = useRef<HTMLTextAreaElement>(null);
 
@@ -31,6 +30,7 @@ export default function TextAreaInput({
   return (
     <InputWrapper disabled={disabled}>
       <textarea
+        rows={rows}
         onChange={(e) => {
           setValue(e.currentTarget.value || null);
         }}
@@ -43,7 +43,6 @@ export default function TextAreaInput({
         maxLength={max}
         ref={ref}
         name={name}
-        rows={1}
       />
     </InputWrapper>
   );

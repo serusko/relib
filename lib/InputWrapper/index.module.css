@@ -2,6 +2,18 @@
   @apply w-full flex px-2 flex-row border border-solid border-neutral-300 rounded gap-2 bg-inverse focus-within:border-primary-500 min-h-10 items-center;
 }
 
+.inputWrapper {
+  @apply flex flex-row;
+
+  & > *:not(:last-child) {
+    @apply !rounded-r-none;
+  }
+
+  & > *:not(:first-child) {
+    @apply !rounded-l-none;
+  }
+}
+
 .disabled {
   @apply bg-neutral-100;
 }

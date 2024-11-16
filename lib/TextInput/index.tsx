@@ -7,6 +7,8 @@ export default function TextInput({
   autoComplete,
   rightIcon,
   leftIcon,
+  rightItem,
+  leftItem,
   required,
   setValue,
   disabled,
@@ -15,7 +17,13 @@ export default function TextInput({
   max,
 }: Props) {
   return (
-    <InputWrapper leftIcon={leftIcon} rightIcon={rightIcon} disabled={disabled}>
+    <InputWrapper
+      rightItem={rightItem}
+      rightIcon={rightIcon}
+      leftItem={leftItem}
+      leftIcon={leftIcon}
+      disabled={disabled}
+    >
       <input
         onChange={(e) => setValue(e.currentTarget.value || null)}
         autoComplete={autoComplete}

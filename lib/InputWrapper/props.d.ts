@@ -5,4 +5,6 @@ export default interface Props {
   rightIcon?: ReactNode;
   disabled?: boolean;
   children: ReactNode;
+  rightItem?: ReactNode;
+  leftItem?: ReactNode;
 }

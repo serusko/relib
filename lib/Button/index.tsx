@@ -12,8 +12,10 @@ function Button(
     type = "button",
     trailingICon,
     leadingIcon,
+    chevron,
     isLoading,
     fullWidth,
+    isActive,
     label,
     ...props
   }: Props,
@@ -26,9 +28,16 @@ function Button(
   });
 
   return (
-    <button ref={ref} type={type} className={style} {...props}>
+    <button
+      data-active={!!isActive}
+      className={style}
+      type={type}
+      {...props}
+      ref={ref}
+    >
       {leadingIcon && <Icon name={leadingIcon} />}
       <span>{label}</span>
+      {chevron && <span className={clsx(styles.chevron)} />}
       {trailingICon && <Icon name={trailingICon} />}
       {isLoading && <span className={styles["icon--loading"]}>...</span>}
     </button>
