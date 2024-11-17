@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 export default function FieldWrapper({
   helperText,
-  horizontal = true,
+  horizontal,
   children,
   required,
   warning,
