@@ -8,6 +8,17 @@ export default interface Props extends PropsWithChildren {
   error?: ReactNode;
   warning?: ReactNode;
   label?: ReactNode;
+  /**
+   * Field is required, so display Asterisk
+   */
   required?: boolean;
-  moreHelper?: ReactNode;
+  /**
+   *
+   */
+  more?: ReactNode;
+  /**
+   * Horizontal mode
+   * si Label is next to Input
+   */
+  horizontal?: boolean;
 }

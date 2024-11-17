@@ -1,0 +1,7 @@
+.container {
+  @apply inline-flex items-center cursor-pointer min-h-10 gap-2;
+}
+
+.text {
+  @apply text-base flex flex-1 leading-4;
+}

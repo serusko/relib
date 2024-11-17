@@ -4,9 +4,13 @@ import Icon from "../lib/Icon";
 import TextField from "../lib/TextField/index.tsx";
 import Tooltip from "../lib/Tooltip/index.tsx";
 import ButtonGroup from "../lib/ButtonGroup/index.tsx";
+import Toggle from "../lib/Toggle/index.tsx";
+import ToggleField from "../lib/ToggleField/index.tsx";
+import CheckBox from "../lib/CheckBox/index.tsx";
 
 export default function App() {
   const [value, setValue] = useState<null | string>(null);
+  const [bul, setBul] = useState<null | boolean>(null);
 
   return (
     <div className="flex flex-col gap-4 p-4 items-start">
@@ -83,14 +87,62 @@ export default function App() {
         leftIcon={<Icon name="a" size={18} />}
       />
       <TextField
-        name="text"
-        label="Text Field"
-        required
-        value={value}
-        setValue={setValue}
-        leftItem={<Button label="Left" />}
         rightItem={<Button label="R" variant="primary" />}
+        leftItem={<Button label="Left" />}
+        setValue={setValue}
+        label="Text Field"
+        value={value}
+        name="text"
+        required
       />
+
+      <div className="flex flex-row gap-3 items-center">
+        <Toggle value={bul} setValue={(v) => setBul(v)} text="ggg" />
+        <ToggleField
+          text="Lorem ipsum set amet halalala balalalal salalal  bulalal "
+          setValue={(v) => setBul(v)}
+          warning="muheheheh"
+          label="gg item"
+          name="toggle"
+          required
+          value={bul}
+        />
+        <ToggleField
+          text="Lorem ipsum set amet halalala balalalal salalal  bulalal "
+          setValue={(v) => setBul(v)}
+          warning="muheheheh"
+          label="gg item"
+          name="toggle"
+          required
+          value={bul}
+          rtl
+        />
+      </div>
+
+      <div className="flex flex-row gap-3 items-center">
+        <CheckBox value={bul} setValue={(v) => setBul(v)} text="ggg" />
+        <ToggleField
+          text="Lorem ipsum set amet halalala balalalal salalal  bulalal "
+          setValue={(v) => setBul(v)}
+          warning="muheheheh"
+          label="gg item"
+          name="toggle"
+          value={bul}
+          required
+          checkbox
+        />
+        <ToggleField
+          text="Lorem ipsum set amet halalala balalalal salalal  bulalal "
+          setValue={(v) => setBul(v)}
+          warning="muheheheh"
+          label="gg item"
+          name="toggle"
+          value={bul}
+          required
+          rtl
+          checkbox
+        />
+      </div>
     </div>
   );
 }

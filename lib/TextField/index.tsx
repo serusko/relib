@@ -1,7 +1,7 @@
 import AnimatedText from "../Animated";
 import FieldWrapper from "../FieldWrapper";
 import TextInput from "../TextInput";
-import Props from "./props";
+import type Props from "./props";
 
 import styles from "./index.module.css";
 import { useMemo } from "react";
@@ -32,7 +32,7 @@ export default function TextField({
       error={error}
       label={label}
       name={name}
-      moreHelper={
+      more={
         max ? (
           <AnimatedText
             className={styles.rightAnimation}

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Props from "./props";
+import type Props from "./props";
 import { forwardRef } from "react";
 
 function Icon(

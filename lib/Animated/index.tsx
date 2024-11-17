@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useEffect, useRef } from "react";
 
 import styles from "./index.module.css";
-import Props from "./props";
+import type Props from "./props";
 
 export default function AnimatedText({ value, className }: Props) {
   const containerRef = useRef<any>();

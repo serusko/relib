@@ -1,4 +1,4 @@
-import Props from "./props";
+import type Props from "./props";
 
 import styles from "./index.module.css";
 import clsx from "clsx";

@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import styles from "./index.module.css";
 import Icon from "../Icon";
-import Props from "./props";
+import type Props from "./props";
 import { forwardRef } from "react";
 
 function Button(

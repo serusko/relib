@@ -1,10 +1,10 @@
-import Props from "./props";
+import type Props from "./props";
 
 import styles from "./index.module.css";
 import clsx from "clsx";
 
 export default function FieldWrapper({
-  moreHelper,
+  more,
   helperText,
   children,
   required,
@@ -13,7 +13,7 @@ export default function FieldWrapper({
   error,
   name,
 }: Props) {
-  const hasMore = !!error || !!helperText || !!warning || !!moreHelper;
+  const hasMore = !!error || !!helperText || !!warning || !!more;
 
   return (
     <div className={styles.container}>
@@ -38,7 +38,7 @@ export default function FieldWrapper({
               {error || warning || helperText}
             </div>
           )}
-          {moreHelper}
+          {more}
         </div>
       )}
     </div>
