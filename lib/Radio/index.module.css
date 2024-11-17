@@ -1,0 +1,15 @@
+.container {
+  @apply inline-flex items-center cursor-pointer min-h-10 gap-2 py-2;
+
+  &[aria-orientation="vertical"] {
+    @apply flex-col items-start;
+  }
+}
+
+.option {
+  @apply flex flex-row gap-2 items-center;
+
+  input {
+    @apply w-5 h-5 bg-neutral-200 accent-primary-500;
+  }
+}

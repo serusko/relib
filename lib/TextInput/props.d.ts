@@ -5,6 +5,7 @@ export default interface Props extends Omit<InputWrapperProps, "children"> {
   setValue: (value: null | string) => void;
   autoComplete?: string;
   value: null | string;
+  placeholder?: string;
   required?: boolean;
   max?: number;
   name: string;

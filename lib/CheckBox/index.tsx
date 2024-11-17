@@ -9,6 +9,7 @@ export default function CheckBox({ setValue, value, name, text, rtl }: Props) {
       {rtl && <div className={styles.text}>{text}</div>}
       <input
         onChange={() => setValue(!value)}
+        className={styles.input}
         id={`input-${name}`}
         checked={!!value}
         type="checkbox"

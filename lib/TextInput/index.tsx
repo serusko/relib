@@ -5,6 +5,7 @@ import styles from "./index.module.css";
 
 export default function TextInput({
   autoComplete,
+  placeholder,
   rightIcon,
   leftIcon,
   rightItem,
@@ -27,6 +28,7 @@ export default function TextInput({
       <input
         onChange={(e) => setValue(e.currentTarget.value || null)}
         autoComplete={autoComplete}
+        placeholder={placeholder}
         className={styles.input}
         id={`input-${name}`}
         value={value || ""}

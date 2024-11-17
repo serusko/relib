@@ -5,3 +5,7 @@
 .text {
   @apply text-base flex flex-1 leading-4;
 }
+
+.input {
+  @apply w-5 h-5 bg-neutral-200 accent-primary-500;
+}

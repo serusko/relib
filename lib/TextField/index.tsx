@@ -8,6 +8,7 @@ import { useMemo } from "react";
 import TextAreaInput from "../TextAreaInput";
 
 export default function TextField({
+  placeholder,
   horizontal,
   helperText,
   multiline,
@@ -44,6 +45,7 @@ export default function TextField({
       }
     >
       <Input
+        placeholder={placeholder}
         required={required}
         value={value}
         name={name}

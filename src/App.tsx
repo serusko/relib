@@ -7,10 +7,19 @@ import ButtonGroup from "../lib/ButtonGroup/index.tsx";
 import Toggle from "../lib/Toggle/index.tsx";
 import ToggleField from "../lib/ToggleField/index.tsx";
 import CheckBox from "../lib/CheckBox/index.tsx";
+import Radio from "../lib/Radio/index.tsx";
+import { RadioOption } from "../lib/Radio/props";
+import RadioField from "../lib/RadioField/index.tsx";
 
 export default function App() {
   const [value, setValue] = useState<null | string>(null);
   const [bul, setBul] = useState<null | boolean>(null);
+  const [radio, setRadio] = useState<unknown>(null);
+
+  const radioOptions: RadioOption[] = [
+    { value: 1, label: "First" },
+    { value: 2, label: "Second" },
+  ];
 
   return (
     <div className="flex flex-col gap-4 p-4 items-start">
@@ -94,6 +103,7 @@ export default function App() {
         value={value}
         name="text"
         required
+        placeholder="gege"
       />
 
       <div className="flex flex-row gap-3 items-center">
@@ -141,6 +151,29 @@ export default function App() {
           required
           rtl
           checkbox
+        />
+      </div>
+
+      <div className="flex flex-row gap-3 items-center">
+        <Radio<unknown>
+          value={radio}
+          setValue={(v) => setRadio(v)}
+          options={radioOptions}
+        />
+        <Radio<unknown>
+          value={radio}
+          setValue={(v) => setRadio(v)}
+          options={radioOptions}
+          dir="col"
+        />
+        <RadioField
+          label="Select option"
+          options={radioOptions}
+          setValue={setRadio}
+          value={radio}
+          error="There is validation error"
+          name="radio1"
+          required
         />
       </div>
     </div>
