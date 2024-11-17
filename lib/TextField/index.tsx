@@ -8,6 +8,7 @@ import { useMemo } from "react";
 import TextAreaInput from "../TextAreaInput";
 
 export default function TextField({
+  horizontal,
   helperText,
   multiline,
   required,
@@ -27,6 +28,7 @@ export default function TextField({
   return (
     <FieldWrapper
       helperText={helperText}
+      horizontal={horizontal}
       required={required}
       warning={warning}
       error={error}

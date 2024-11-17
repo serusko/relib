@@ -18,7 +18,8 @@ export default interface Props extends PropsWithChildren {
   more?: ReactNode;
   /**
    * Horizontal mode
-   * si Label is next to Input
+   * so Label is next to Input
+   * split 1 to 3 with input field
    */
   horizontal?: boolean;
 }

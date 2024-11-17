@@ -27,3 +27,19 @@
 .asterisk {
   @apply text-danger-500 ml-1;
 }
+
+.content {
+  @apply flex flex-col gap-1;
+}
+
+.horizontal {
+  @apply flex flex-row gap-3;
+
+  & > label {
+    @apply mt-3 flex flex-1;
+  }
+
+  & > div[role="gridcell"] {
+    flex: 3;
+  }
+}
