@@ -17,7 +17,7 @@ export default interface Props extends React.ComponentProps<"button"> {
    */
   variant?: "primary" | "outline" | "default" | "text";
   fullWidth?: boolean;
-  label: string;
+  label?: string;
   isActive?: boolean;
   chevron?: boolean;
 }

@@ -36,7 +36,7 @@ function Button(
       ref={ref}
     >
       {leadingIcon && <Icon name={leadingIcon} />}
-      <span>{label}</span>
+      {label && <span>{label}</span>}
       {chevron && <span className={clsx(styles.chevron)} />}
       {trailingICon && <Icon name={trailingICon} />}
       {isLoading && <span className={styles["icon--loading"]}>...</span>}

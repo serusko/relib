@@ -1,3 +1,3 @@
-type IconName = "a" | "b";
+type IconName = "search";
 
 export default IconName;

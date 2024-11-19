@@ -74,7 +74,7 @@ export default function App() {
             ? "Cannot be longer than 10 characters"
             : undefined
         }
-        leftIcon={<Icon name="a" size={18} />}
+        leftIcon={<Icon name="search" size={18} />}
         max={10}
       />
       <TextField
@@ -93,11 +93,11 @@ export default function App() {
         setValue={setValue}
         helperText="Helper ... text"
         max={100}
-        leftIcon={<Icon name="a" size={18} />}
+        leftIcon={<Icon name="search" size={18} />}
       />
       <TextField
         rightItem={<Button label="R" variant="primary" />}
-        leftItem={<Button label="Left" />}
+        leftItem={<Button leadingIcon="search" variant="primary" />}
         setValue={setValue}
         label="Text Field"
         value={value}
@@ -176,6 +176,7 @@ export default function App() {
           required
         />
       </div>
+      <Icon name="search" />
     </div>
   );
 }
