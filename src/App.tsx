@@ -10,6 +10,7 @@ import CheckBox from "../lib/CheckBox/index.tsx";
 import Radio from "../lib/Radio/index.tsx";
 import { RadioOption } from "../lib/Radio/props";
 import RadioField from "../lib/RadioField/index.tsx";
+import IconPreview from "../lib/Icon/IconPreview.tsx";
 
 export default function App() {
   const [value, setValue] = useState<null | string>(null);
@@ -23,7 +24,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col gap-4 p-4 items-start">
-      <a href="#1">Pipik</a>
+      <a href="#1">Example link</a>
       <Button label="Small" size="small" />
       <Button label="Medium" size="medium" chevron />
       <Button label="Disabled" disabled />
@@ -177,6 +178,8 @@ export default function App() {
         />
       </div>
       <Icon name="search" />
+
+      <IconPreview />
     </div>
   );
 }

@@ -12,34 +12,31 @@ function Button(
     type = "button",
     trailingICon,
     leadingIcon,
-    chevron,
     isLoading,
     fullWidth,
     isActive,
+    chevron,
     label,
     ...props
   }: Props,
   ref: React.RefAttributes<HTMLButtonElement>["ref"]
 ) {
-  const style = clsx(styles.button, {
-    [styles[`button--${variant}`]]: variant,
-    [styles[`button--${size}`]]: variant !== "text" && size,
-    [styles["button--loading"]]: isLoading,
-  });
-
   return (
     <button
+      data-loading={!!isLoading}
+      className={styles.button}
       data-active={!!isActive}
-      className={style}
+      data-variant={variant}
+      data-size={size}
       type={type}
       {...props}
       ref={ref}
     >
       {leadingIcon && <Icon name={leadingIcon} />}
       {label && <span>{label}</span>}
-      {chevron && <span className={clsx(styles.chevron)} />}
+      {chevron && <span className={styles.chevron} />}
       {trailingICon && <Icon name={trailingICon} />}
-      {isLoading && <span className={styles["icon--loading"]}>...</span>}
+      {isLoading && <span className={styles.loadingIcon}>...</span>}
     </button>
   );
 }

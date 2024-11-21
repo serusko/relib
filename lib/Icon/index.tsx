@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 
 import sprite from "./sprite.svg";
 
+// https://iconoir.com/
 function Icon(
   { size = 20, name }: Props,
   ref: React.RefAttributes<SVGSVGElement>["ref"]
