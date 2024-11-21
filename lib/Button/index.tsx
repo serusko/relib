@@ -1,5 +1,3 @@
-import clsx from "clsx";
-
 import styles from "./index.module.css";
 import Icon from "../Icon";
 import type Props from "./props";
