@@ -30,11 +30,15 @@ function Button(
       {...props}
       ref={ref}
     >
-      {leadingIcon && <Icon name={leadingIcon} />}
+      {leadingIcon && <Icon className={styles.icon} name={leadingIcon} />}
       {label && <span>{label}</span>}
       {chevron && <span className={styles.chevron} />}
-      {trailingICon && <Icon name={trailingICon} />}
-      {isLoading && <span className={styles.loadingIcon}>...</span>}
+      {trailingICon && <Icon className={styles.icon} name={trailingICon} />}
+      {isLoading && (
+        <span className={styles.loadingIcon}>
+          <Icon className={styles.icon} name="loading" />
+        </span>
+      )}
     </button>
   );
 }

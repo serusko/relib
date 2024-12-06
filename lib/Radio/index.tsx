@@ -3,10 +3,10 @@ import Props, { OptionValue } from "./props";
 import styles from "./index.module.css";
 
 export default function Radio<V extends OptionValue>({
-  options,
   value: fieldValue,
-  setValue,
   dir = "row",
+  setValue,
+  options,
 }: Props<V>) {
   return (
     <div

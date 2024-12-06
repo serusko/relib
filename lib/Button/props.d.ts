@@ -1,4 +1,4 @@
-import IconName from "../Icon/IconName";
+import type { IconName } from "../Icon";
 
 export default interface Props extends React.ComponentProps<"button"> {
   /**

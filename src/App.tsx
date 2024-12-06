@@ -10,7 +10,6 @@ import CheckBox from "../lib/CheckBox/index.tsx";
 import Radio from "../lib/Radio/index.tsx";
 import { RadioOption } from "../lib/Radio/props";
 import RadioField from "../lib/RadioField/index.tsx";
-import IconPreview from "../lib/Icon/IconPreview.tsx";
 
 export default function App() {
   const [value, setValue] = useState<null | string>(null);
@@ -25,13 +24,25 @@ export default function App() {
   return (
     <div className="flex flex-col gap-4 p-4 items-start">
       <a href="#1">Example link</a>
-      <Button label="Small" size="small" />
-      <Button label="Medium" size="medium" chevron />
-      <Button label="Disabled" disabled />
-      <Button label="Large" size="large" />
-      <Button label="Large" isLoading />
-      <Button label="Text" variant="text" />
-      <Button label="Primary" variant="primary" chevron />
+
+      <div className="grid grid-cols-3 gap-4">
+        <Button label="Active" isActive />
+        <Button label="Default" size="medium" chevron />
+        <Button label="Disabled" disabled />
+      </div>
+
+      <div className="grid grid-cols-3 gap-4">
+        <Button label="Loading" size="small" isLoading />
+        <Button label="Loading" isLoading />
+        <Button label="Loading" size="large" isLoading />
+      </div>
+
+      <ButtonGroup>
+        <Button label="Text" variant="text" />
+        <Button label="Default" variant="default" />
+        <Button label="Primary" variant="primary" chevron />
+        <Button label="Outline" variant="outline" chevron />
+      </ButtonGroup>
 
       <ButtonGroup>
         <Button label="Active" isActive />
@@ -51,18 +62,53 @@ export default function App() {
         <Button label="Disabled" disabled />
       </ButtonGroup>
 
-      <Tooltip
-        content={
-          <>
-            Lest take a look on{" "}
-            <a href="#2" className="text-primary-500">
-              More
-            </a>
-          </>
-        }
-      >
-        <Button label="Outline" variant="outline" />
-      </Tooltip>
+      <ButtonGroup variant="text">
+        <Button label="Active" isActive />
+        <Button label="Default" />
+        <Button label="Disabled" disabled />
+      </ButtonGroup>
+
+      <div className="grid grid-cols-3 gap-4 ml-72">
+        <Tooltip
+          placement="left"
+          content={
+            <>
+              Lest take a look on{" "}
+              <a href="#2" className="text-primary-500">
+                More
+              </a>
+            </>
+          }
+        >
+          <Button label="Left" variant="outline" />
+        </Tooltip>
+        <Tooltip
+          placement="bottom"
+          content={
+            <>
+              Lest take a look on{" "}
+              <a href="#2" className="text-primary-500">
+                More
+              </a>
+            </>
+          }
+        >
+          <Button label="Tooltip" variant="outline" />
+        </Tooltip>
+        <Tooltip
+          placement="right"
+          content={
+            <>
+              Lest take a look on{" "}
+              <a href="#2" className="text-primary-500">
+                More
+              </a>
+            </>
+          }
+        >
+          <Button label="Right" variant="outline" />
+        </Tooltip>
+      </div>
       <TextField
         name="text"
         label="Text Field"
@@ -75,7 +121,7 @@ export default function App() {
             ? "Cannot be longer than 10 characters"
             : undefined
         }
-        leftIcon={<Icon name="search" size={18} />}
+        leftIcon={<Icon name="box-3d-center" size={21} />}
         max={10}
       />
       <TextField
@@ -94,11 +140,11 @@ export default function App() {
         setValue={setValue}
         helperText="Helper ... text"
         max={100}
-        leftIcon={<Icon name="search" size={18} />}
+        leftIcon={<Icon name="box-3d-center" />}
       />
       <TextField
         rightItem={<Button label="R" variant="primary" />}
-        leftItem={<Button leadingIcon="search" variant="primary" />}
+        leftItem={<Button leadingIcon="box-3d-center" variant="primary" />}
         setValue={setValue}
         label="Text Field"
         value={value}
@@ -177,9 +223,6 @@ export default function App() {
           required
         />
       </div>
-      <Icon name="search" />
-
-      <IconPreview />
     </div>
   );
 }

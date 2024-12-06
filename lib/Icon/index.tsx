@@ -1,18 +1,35 @@
 import type Props from "./props";
-import { forwardRef } from "react";
+import { forwardRef, lazy, Suspense, useMemo } from "react";
 
-import sprite from "./sprite.svg";
+import type IconName from "./dist/IconName";
+import Loading from "./Loading";
 
 // https://iconoir.com/
 function Icon(
-  { size = 20, name }: Props,
-  ref: React.RefAttributes<SVGSVGElement>["ref"]
+  { size, name, className }: Props,
+  ref: React.RefAttributes<any>["ref"]
 ) {
+  const loading = useMemo(
+    () => <Loading style={{ width: size, height: size }} />,
+    [size]
+  );
+
+  const I = useMemo(
+    () => lazy(() => import(`./dist/${name}.svg?react`)),
+    [name]
+  );
+
+  if (name === "loading") {
+    return loading;
+  }
+
   return (
-    <svg ref={ref} width={size} height={size} viewBox="0 0 24 24">
-      <use xlinkHref={`${sprite}#${name}`} />
-    </svg>
+    <Suspense fallback={loading}>
+      <I className={className} ref={ref} style={{ width: size }} />
+    </Suspense>
   );
 }
+
+export type { IconName };
 
 export default forwardRef(Icon);

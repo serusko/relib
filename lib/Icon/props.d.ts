@@ -1,10 +1,12 @@
-import IconName from "./IconName";
+import IconName from "./dist/IconName";
 
 export default interface Props {
-  name: IconName;
+  name: "loading" | IconName;
   /**
    * Icon W x H
    * @defaults {20}
    */
-  size?: number;
+  size?: number | string;
+
+  className?: string;
 }

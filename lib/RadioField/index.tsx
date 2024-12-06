@@ -16,10 +16,10 @@ export default function RadioField<V extends OptionValue = OptionValue>({
     <FieldWrapper name={name} {...props}>
       <Radio
         setValue={setValue}
+        options={options}
         value={value}
         name={name}
         dir={dir}
-        options={options}
       />
     </FieldWrapper>
   );

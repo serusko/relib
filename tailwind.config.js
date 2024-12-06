@@ -1,3 +1,4 @@
+import plugin from "tailwindcss/plugin";
 import { violet, orange, rose, neutral } from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
@@ -7,32 +8,32 @@ export default {
     extend: {
       colors: {
         primary: violet,
-        danger: rose,
         warning: orange,
-        neutral,
         inverse: "#fff",
+        danger: rose,
         text: "#222",
+        neutral,
       },
     },
   },
   plugins: [
-    function ({ addBase, theme }) {
-      function extractColorVars(colorObj, colorGroup = "") {
-        return Object.keys(colorObj).reduce((vars, colorKey) => {
-          const value = colorObj[colorKey];
-
-          const newVars =
-            typeof value === "string"
-              ? { [`--color${colorGroup}-${colorKey}`]: value }
-              : extractColorVars(value, `-${colorKey}`);
-
-          return { ...vars, ...newVars };
-        }, {});
-      }
+    plugin(function ({ addBase, theme }) {
+      const colors = theme("colors");
+      const newVars = Object.keys(colors).reduce((vars, color) => {
+        const value = colors[color];
+        if (typeof value === "string") {
+          vars[`--color-${color}`] = value;
+        } else {
+          Object.keys(value).forEach((shade) => {
+            vars[`--color-${color}-${shade}`] = value[shade];
+          });
+        }
+        return vars;
+      }, {});
 
       addBase({
-        ":root": extractColorVars(theme("colors")),
+        ":root": newVars,
       });
-    },
+    }),
   ],
 };

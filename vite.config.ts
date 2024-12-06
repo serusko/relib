@@ -6,11 +6,15 @@ import { globSync } from "glob";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import svgr from "vite-plugin-svgr";
+import svg from "vite-plugin-svgo";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    svgr(),
+    svg(),
     libInjectCss(),
     dts({
       tsconfigPath: "./tsconfig.build.json",

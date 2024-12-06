@@ -2,12 +2,6 @@
   @apply flex flex-col flex-1 gap-1 w-full;
 }
 
-.horizontal {
-}
-
-.vertical {
-}
-
 .label {
   @apply text-sm cursor-pointer;
 }
