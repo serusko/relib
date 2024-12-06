@@ -1,4 +1,4 @@
-import AnimatedText from "../Animated";
+import AnimatedText from "../AnimatedText";
 import FieldWrapper from "../FieldWrapper";
 import TextInput from "../TextInput";
 import type Props from "./props";
