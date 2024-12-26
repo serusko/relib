@@ -1,6 +1,14 @@
 .button {
   @apply gap-2 border border-solid outline box-border uppercase leading-none outline-2 outline-offset-2 rounded flex grow-0 items-center justify-center cursor-pointer relative outline-none;
 
+  &:focus {
+    @apply z-10 outline-double outline-offset-1 outline-primary-500;
+  }
+
+  &:active {
+    @apply scale-95;
+  }
+
   &:disabled {
     @apply pointer-events-none;
   }
