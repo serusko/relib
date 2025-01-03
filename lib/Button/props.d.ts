@@ -6,8 +6,8 @@ export default interface Props extends React.ComponentProps<"button"> {
    */
   type?: "button" | "submit" | "reset";
   size?: "small" | "medium" | "large";
-  leadingIcon?: IconName;
-  trailingICon?: IconName;
+  leadingIcon?: ReactNode | IconName;
+  trailingIcon?: ReactNode | IconName;
   /**
    * Indicate Loading status
    */

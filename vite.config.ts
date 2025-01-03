@@ -17,6 +17,7 @@ export default defineConfig({
     svg(),
     libInjectCss(),
     dts({
+      copyDtsFiles: true,
       tsconfigPath: "./tsconfig.build.json",
       exclude: ["**/*.stories.tsx", "**/*.stories.ts"],
     }),

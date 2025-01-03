@@ -4,6 +4,7 @@ import type Props from "./props";
 import styles from "./index.module.css";
 
 export default function TextInput({
+  type = "text",
   autoComplete,
   placeholder,
   rightIcon,
@@ -36,6 +37,7 @@ export default function TextInput({
         disabled={disabled}
         maxLength={max}
         name={name}
+        type={type}
       />
     </InputWrapper>
   );

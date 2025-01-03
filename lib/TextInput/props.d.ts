@@ -9,4 +9,5 @@ export default interface Props extends Omit<InputWrapperProps, "children"> {
   required?: boolean;
   max?: number;
   name: string;
+  type?: HTMLProps<HTMLInputElement>["type"];
 }
